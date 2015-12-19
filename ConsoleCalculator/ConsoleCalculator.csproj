@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{27EACF24-2DF2-407C-8314-0DD5C230D7A5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConsoleCalculator</RootNamespace>
+    <AssemblyName>ConsoleCalculator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net40\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstracts\IBracketCounter.cs" />
+    <Compile Include="Abstracts\IBracketRemover.cs" />
+    <Compile Include="Abstracts\ICalculator.cs" />
+    <Compile Include="Abstracts\IExpressionDelimiter.cs" />
+    <Compile Include="Abstracts\IExpressionExtractent.cs" />
+    <Compile Include="Abstracts\IOperandParser.cs" />
+    <Compile Include="Abstracts\IOperationCounter.cs" />
+    <Compile Include="Abstracts\IOperationFinder.cs" />
+    <Compile Include="Abstracts\IOperationsPriorities.cs" />
+    <Compile Include="Abstracts\IPriorityOperationFinder.cs" />
+    <Compile Include="Abstracts\IResultsRepository.cs" />
+    <Compile Include="BracketCounter.cs" />
+    <Compile Include="BracketRemover.cs" />
+    <Compile Include="Domain\Calculator.cs" />
+    <Compile Include="Domain\CloseBracket.cs" />
+    <Compile Include="Abstracts\IBracket.cs" />
+    <Compile Include="Abstracts\ICloseBracket.cs" />
+    <Compile Include="Abstracts\IOpenBracket.cs" />
+    <Compile Include="Domain\OpenBracket.cs" />
+    <Compile Include="ExpressionDelimiter.cs" />
+    <Compile Include="Extentions\Extensions.cs" />
+    <Compile Include="Abstracts\IWhiteSpaceTrimer.cs" />
+    <Compile Include="OperationCounter.cs" />
+    <Compile Include="OperationFinder.cs" />
+    <Compile Include="OperationsPriorities.cs" />
+    <Compile Include="Operations\DifferentOperation.cs" />
+    <Compile Include="Operations\DivisionOperation.cs" />
+    <Compile Include="Domain\Expression.cs" />
+    <Compile Include="Abstracts\IOperation.cs" />
+    <Compile Include="Operations\MultiplicationOperation.cs" />
+    <Compile Include="Domain\OperationInfo.cs" />
+    <Compile Include="Domain\PositionOperation.cs" />
+    <Compile Include="ExpressionExtractent.cs" />
+    <Compile Include="OperandParser.cs" />
+    <Compile Include="PriorityOperationFinder.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Operations\SumOperation.cs" />
+    <Compile Include="Domain\ResultsRepository.cs" />
+    <Compile Include="WhiteSpaceTrimer.cs" />
+    <Compile Include="Worker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
